@@ -29,43 +29,57 @@ class _ProductsListViewState extends State<ProductsListView> {
         final ProductModel product = widget.products[index];
         return Stack(
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // const Spacer(),
-                Expanded(
-                  child: Container(
-                    clipBehavior: Clip.antiAlias,
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                    child: CachedNetworkImage(
-                      imageUrl: product.imageUrl,
-                      fit: BoxFit.scaleDown,
+            Container(
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 5,
+                        // spreadRadius: 5,
+                        blurStyle: BlurStyle.inner)
+                  ],
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Colors.black, width: 0.5)),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // const Spacer(),
+                  Expanded(
+                    child: Container(
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10)),
+                      child: CachedNetworkImage(
+                        imageUrl: product.imageUrl,
+                        fit: BoxFit.scaleDown,
+                      ),
                     ),
                   ),
-                ),
-                // const Spacer(),
-                const SizedBox(height: 10),
-                Text(
-                  product.name,
-                  style: AppStyle.body2.copyWith(color: AppColors.c606060),
-                ),
-                const SizedBox(height: 5),
-                Text(
-                  "\$ ${product.price}",
-                  style: AppStyle.body2.copyWith(
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.c303030,
+                  // const Spacer(),
+                  const SizedBox(height: 10),
+                  Text(
+                    product.name,
+                    style: AppStyle.body2.copyWith(color: AppColors.c606060),
                   ),
-                ),
-                CardWidget(
-                  product: product,
-                  isInCard: basket
-                      .map((e) => e.product.id)
-                      .toList()
-                      .contains(product.id),
-                )
-              ],
+                  const SizedBox(height: 5),
+                  Text(
+                    "\$ ${product.price}",
+                    style: AppStyle.body2.copyWith(
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.c303030,
+                    ),
+                  ),
+                  CardWidget(
+                    product: product,
+                    isInCard: basket
+                        .map((e) => e.product.id)
+                        .toList()
+                        .contains(product.id),
+                  )
+                ],
+              ),
             ),
             Positioned(
               right: 8,

@@ -1,4 +1,5 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:third_exam_n8/ui/home_screen.dart';
@@ -16,7 +17,7 @@ void main() async {
   //   builder: (BuildContext context) {
   //     return const MyApp();
   //   },
-  //g ));
+  // ));
   runApp(const MyApp());
 }
 
