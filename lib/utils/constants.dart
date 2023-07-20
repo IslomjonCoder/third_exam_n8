@@ -8,6 +8,6 @@ const String baseUrl = 'https://imtixon.free.mockoapp.net/';
 List<Widget> pages = [
   ProductsScreen(),
   CategoriesScreen(),
-  FavouritesScreen(),
+  const FavouritesScreen(),
   ShoppingCardScreen()
 ];

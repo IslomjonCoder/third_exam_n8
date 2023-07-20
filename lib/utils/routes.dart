@@ -23,12 +23,14 @@ class AppRoutes {
         return MaterialPageRoute(builder: (context) => ProductsScreen());
       case RouteNames.categoryProducts:
         return MaterialPageRoute(
-            builder: (context) => CategoryProductsScreen(
-                  category: settings.arguments as CategoryModel,
-                ));
+          builder: (context) => CategoryProductsScreen(
+            category: settings.arguments as CategoryModel,
+          ),
+        );
       case RouteNames.favourites:
         return MaterialPageRoute(
-            builder: (context) => const FavouritesScreen());
+          builder: (context) => const FavouritesScreen(),
+        );
       case RouteNames.shoppingCard:
         return MaterialPageRoute(builder: (context) => ShoppingCardScreen());
       default:

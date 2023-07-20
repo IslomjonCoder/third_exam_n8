@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
-import 'package:third_exam_n8/models/product_model.dart';
-import 'package:third_exam_n8/repository/favourite_repository.dart';
+import 'package:third_exam_n8/utils/path.dart';
 
 class SavedIcon extends StatefulWidget {
   SavedIcon({Key? key, required this.product, required this.isSelected})
@@ -22,7 +20,7 @@ class _SavedIconState extends State<SavedIcon> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(shape: BoxShape.circle),
+      decoration: const BoxDecoration(shape: BoxShape.circle),
       child: IconButton(
         onPressed: () {
           (!RepositoryFavourites.getAll

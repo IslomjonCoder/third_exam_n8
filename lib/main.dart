@@ -1,13 +1,8 @@
 import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:third_exam_n8/models/basket_item_model.dart';
-import 'package:third_exam_n8/models/product_model.dart';
 import 'package:third_exam_n8/ui/home_screen.dart';
-import 'package:third_exam_n8/utils/boxes.dart';
-import 'package:third_exam_n8/utils/routes.dart';
-import 'package:third_exam_n8/utils/style.dart';
+import 'package:third_exam_n8/utils/path.dart';
 
 void main() async {
   await Hive.initFlutter();
@@ -32,9 +27,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          appBarTheme: AppBarTheme(
-              backgroundColor: Colors.black,
-              titleTextStyle: AppStyle.subhead.copyWith(color: Colors.white))),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.black,
+          titleTextStyle: AppStyle.subhead.copyWith(color: Colors.white),
+        ),
+      ),
       home: HomeScreen(),
       onGenerateRoute: AppRoutes.generateRoute,
       debugShowCheckedModeBanner: false,
