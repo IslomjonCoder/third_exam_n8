@@ -64,7 +64,7 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                 ),
                 const Spacer(),
                 Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     GestureDetector(
                       onTap: () {
@@ -74,17 +74,6 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
                       },
                       child: SvgPicture.asset(AppImages.clear),
                     ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        padding: const EdgeInsets.all(7),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: AppColors.cE0E0E0,
-                        ),
-                        child: SvgPicture.asset(AppImages.shoppingBag),
-                      ),
-                    )
                   ],
                 )
               ],

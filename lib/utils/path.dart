@@ -30,3 +30,6 @@ export 'package:third_exam_n8/network/api_provider.dart';
 /// -------------------------widgets-------------------------
 export 'package:third_exam_n8/widgets/saved_widget.dart';
 export 'package:third_exam_n8/widgets/add_to_basket_widget.dart';
+
+/// -------------------------shimmers-------------------------
+export 'package:third_exam_n8/ui/shimmers/category_shimmer.dart';

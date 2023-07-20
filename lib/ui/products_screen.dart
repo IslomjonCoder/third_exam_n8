@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:third_exam_n8/ui/shimmers/product_shimmer.dart';
 
 import 'package:third_exam_n8/utils/path.dart';
+import 'package:third_exam_n8/widgets/shimmer_skeleton.dart';
 
 class ProductsScreen extends StatelessWidget {
   ProductsScreen({Key? key}) : super(key: key);
@@ -17,37 +19,7 @@ class ProductsScreen extends StatelessWidget {
         future: provider.fetchProducts(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Shimmer.fromColors(
-              baseColor: Colors.grey[400]!,
-              highlightColor: Colors.white,
-              child: GridView.builder(
-                padding: const EdgeInsets.all(20),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 20,
-                  mainAxisSpacing: 15,
-                  childAspectRatio: 0.6,
-                ),
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  return Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: 200,
-                        color: Colors.green,
-                      ),
-                      SizedBox(height: 20),
-                      Container(
-                        height: 20,
-                        width: 120,
-                        color: Colors.green,
-                      ),
-                    ],
-                  );
-                },
-              ),
-            );
+            return ProductShimmer();
           } else if (snapshot.hasError) {
             return Center(child: Text(snapshot.error.toString()));
           } else if (snapshot.hasData) {

@@ -22,6 +22,10 @@ class _HomeScreenState extends State<HomeScreen> {
           });
         },
         currentIndex: selected,
+        type: BottomNavigationBarType.fixed,
+        // showSelectedLabels: false,
+        showUnselectedLabels: false,
+
         items: [
           BottomNavigationBarItem(
             icon: SvgPicture.asset(

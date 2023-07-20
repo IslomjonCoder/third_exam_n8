@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:third_exam_n8/ui/shimmers/product_shimmer.dart';
 
 import 'package:third_exam_n8/utils/path.dart';
 
@@ -17,7 +18,7 @@ class CategoryProductsScreen extends StatelessWidget {
         future: provider.fetchCategoryProductsByID(id: category.id),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
+            return ProductShimmer();
           } else if (snapshot.hasError) {
             return Center(child: Text(snapshot.error.toString()));
           } else if (snapshot.hasData) {
